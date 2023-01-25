@@ -1,3 +1,4 @@
 The difference between tuples and lists are that you can edit items in a list, but not items in a tuple.
 A list is a mutable object, while a tuple is an immutable object. Other various differences between them
-are that lists use brackets, [], and tuples use parentheses, (), to hold data.
+are that lists use brackets, [], and tuples use parentheses, (), to hold data. The most important
+difference between them is the fact that a tuple is unchangeable and a list is changeable.

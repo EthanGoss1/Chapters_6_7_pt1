@@ -1,8 +1,0 @@
-Widget,42.99
-Crocs,36.99
-Whiskey,1.99
-Shirt,11.99
-Sandals,950.99
-WorldPeace,123.45
-FreeStuff,6789.10
-WorldPeace,4.99

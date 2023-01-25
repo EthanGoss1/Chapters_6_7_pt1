@@ -1,4 +1,4 @@
-with open("file_with_lines.txt", 'r') as f:
+with open("data.txt", 'r') as f:
     data = f.readlines()
 
 items_list = []
@@ -17,28 +17,33 @@ items_list.sort(key=cost_sort, reverse=True)
 
 print(f"'{items_list[0][0]}' costs the most amount of money.")
 
+items_list.sort()
 # Exercise 3
 # I made this so much harder than it had to be, probably.
 # Either way, my solution works but I hate how it looks.
+
 amt_times_appeared = []
-burn_list = []
-active = True
-while active:
-    index = 0
-    for item in items_list:
-        counter = 0
-        if item[0] == items_list[:][index][0]:
-            counter += 1
-            index += 1
-        else:
-            index += 1
-        if [item[0], counter] not in burn_list:
-            burn_list.append([item[0], counter])
-        else:
-            burn_list.remove([item[0], counter])
-            burn_list.append([item[0], counter+1])
-    active = False
+counter = 1
+amt_times_appeared = [(i[0], counter) for i in items_list]
 
-amt_times_appeared = [(i[0], i[1]) for i in burn_list]
+for item in amt_times_appeared:
+    product = (item[0], item[1])
+    counter = amt_times_appeared.count(product)
+    for x in range(counter):
+        amt_times_appeared.remove(product)
+    product = (item[0], counter)
+    amt_times_appeared.append(product)
+                
+amt_times_appeared.sort()
 
-print(amt_times_appeared)
+def length_sort(item):
+    return len(item[0])
+
+amt_times_appeared.sort(key=length_sort, reverse=True)
+
+# Right justified with a width of at least 7: nice.
+width = len(amt_times_appeared[0]) + 7
+
+amt_times_appeared.sort()
+for item in amt_times_appeared:
+    print(f"{item[0]}".rjust(width) + f"{item[1]}".rjust(width))

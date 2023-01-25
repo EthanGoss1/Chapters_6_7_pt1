@@ -1,0 +1,9 @@
+Widget,42.99
+Widget,41.99
+Widget,7.00
+Widget,100.01
+Gimble,20.10
+Rake,19.99
+Boat,2000.00
+House,300000.42
+Island,57.75
